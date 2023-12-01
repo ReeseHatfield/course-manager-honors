@@ -1,3 +1,6 @@
+# Forked from course-manager
+This is the honors group assignment for CS-3900
+
 # RWA
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
