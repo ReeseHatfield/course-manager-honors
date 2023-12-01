@@ -69,8 +69,10 @@
 
 <p-dialog [(visible)]="showDeleteModal" [modal]="true">
   <div>
-    <span>Are you sure you want to delete?</span>
-    <div>
+    <span style="font-size: 25px; padding: 10px"
+      ><b>Are you sure you want to delete?</b></span
+    >
+    <div style="padding: 10px">
       <button class="cancel-button" (click)="closeDeleteModal()">
         Cancel
       </button>
