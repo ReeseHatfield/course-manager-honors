@@ -39,7 +39,7 @@
           Edit
         </button>
         <button class="course-btn" (click)="showInfo(course)">
-          Get Course Info
+          Details
         </button>
         <button class="course-btn" (click)="openDelete(course.id)">
           Delete
@@ -81,7 +81,11 @@
   </div>
 </p-dialog>
 
-<p-dialog [(visible)]="showEditModal" [modal]="true">
+<p-dialog
+  style="font-size: 25px"
+  [(visible)]="showEditModal"
+  [modal]="true"
+>
   <!-- Most of this I just copy pasted from the showAddCourseModal -->
   <div class="flex flex-col w-100 gap-2">
     <div class="flex flex-col gap">
