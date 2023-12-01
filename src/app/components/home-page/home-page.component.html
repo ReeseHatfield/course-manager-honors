@@ -1,35 +1,67 @@
 <app-header></app-header>
 <div class="body-margin">
   <div class="flex w-100">
-    <button class="button-styling flex-auto" (click)="openAddCourse()">Add Course</button>
+    <button
+      class="button-styling flex-auto"
+      (click)="openAddCourse()"
+    >
+      Add Course
+    </button>
   </div>
-  <div class="flex flex-wrap w-100 ">
-    <div *ngFor="let course of courses">
-      <div>
-        <label class="font-bold"> {{ course.name }}</label>
-        <label>
-          <span> Credit Hours:</span>
-          {{course.creditHours}}
-        </label>
-      </div>
-      <div>
-        {{course.code}}
-      </div>
-      <div>
-        {{course.id}}
+  <div class="flex flex-wrap w-100 card-grid">
+    <div *ngFor="let course of courses" class="course-card grid-item">
+      <div class="card-header">
+        <div class="top-thing">
+          <span class="align-left"> {{ course.name }}</span>
+          <span class="align-right">
+            Credit Hours: {{ course.creditHours }}
+          </span>
+        </div>
+        <div class="code">
+          <b> {{ course.type }} - {{ course.code }} </b>
+          ({{ course.level }})
+        </div>
       </div>
 
       <div>
-        <button (click)="openEdit(course)">Edit</button>
-        <button (click)="openDelete(course.id)">Delete</button>
+        <p class="basic-info">
+          Fortuna audaces iuvat, timidosque repellit. Labor omnia
+          vincit improbus. Per aspera ad astra. Dum spiro, spero.
+        </p>
       </div>
-      <!----
-      TODO: Add Course Content Here
-      ---->
+
+      <div class="instructor">
+        <span> <b>Instructor: </b> Dr. John Smith </span>
+      </div>
+
+      <div class="btn-container">
+        <button class="course-btn" (click)="openEdit(course)">
+          Edit
+        </button>
+        <button class="course-btn" (click)="showInfo(course)">
+          Get Course Info
+        </button>
+        <button class="course-btn" (click)="openDelete(course.id)">
+          Delete
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
+<p-dialog [(visible)]="showInfoModalFlag" [modal]="true">
+  <div>
+    <p>Course Level: {{ selectedCourse.name }}</p>
+    <p>Course Code: {{ selectedCourse.code }}</p>
+    <p>Course Type: {{ selectedCourse.type }}</p>
+    <p>Credit Hours: {{ selectedCourse.creditHours }}</p>
+    <p>Course ID: {{ selectedCourse.id }}</p>
+    <p>Course Level: {{ selectedCourse.level }}</p>
+  </div>
+  <div>
+    <button (click)="closeInfoModal()">Close</button>
+  </div>
+</p-dialog>
 
 <p-dialog [(visible)]="showDeleteModal" [modal]="true">
   <div>
@@ -47,39 +79,65 @@
   --->
 </p-dialog>
 
-<p-dialog [(visible)]="showAddCourseModal" [modal]="true" [draggable]="false">
+<p-dialog
+  [(visible)]="showAddCourseModal"
+  [modal]="true"
+  [draggable]="false"
+>
   <ng-template pTemplate="header">
-    <div>
-      Add Course
-    </div>
+    <div>Add Course</div>
   </ng-template>
   <div class="flex flex-col w-100 gap-2">
     <div class="flex flex-col gap">
       <label class="font-bold">Course Name</label>
-      <input type="text" class="input-style" [(ngModel)]="courseAdd.name">
+      <input
+        type="text"
+        class="input-style"
+        [(ngModel)]="courseAdd.name"
+      />
     </div>
     <div class="flex flex-col gap">
       <label class="font-bold">Course Code</label>
-      <input type="text" class="input-style" [(ngModel)]="courseAdd.code">
+      <input
+        type="text"
+        class="input-style"
+        [(ngModel)]="courseAdd.code"
+      />
     </div>
     <div class="flex flex-col gap">
       <label class="font-bold">Course Type</label>
-      <input type="text" class="input-style" [(ngModel)]="courseAdd.type">
+      <input
+        type="text"
+        class="input-style"
+        [(ngModel)]="courseAdd.type"
+      />
     </div>
     <div class="flex flex-col gap">
       <label class="font-bold">Course Level</label>
-      <select name="level" class="input-style" [(ngModel)]="courseAdd.level">
+      <select
+        name="level"
+        class="input-style"
+        [(ngModel)]="courseAdd.level"
+      >
         <option value="UNDERGRADUATE">Undergraduate</option>
         <option value="GRADUATE">Graduate</option>
       </select>
     </div>
     <div class="flex flex-col gap">
       <label class="font-bold">Course Credit Hours</label>
-      <input type="number" class="input-style" [(ngModel)]="courseAdd.creditHours">
+      <input
+        type="number"
+        class="input-style"
+        [(ngModel)]="courseAdd.creditHours"
+      />
     </div>
     <div class="flex w-100 justify-between">
-      <button class="cancel-button" (click)="closeAddModal()">Cancel</button>
-      <button class="button-styling" (click)="confirmAdd()">Confirm</button>
+      <button class="cancel-button" (click)="closeAddModal()">
+        Cancel
+      </button>
+      <button class="button-styling" (click)="confirmAdd()">
+        Confirm
+      </button>
     </div>
   </div>
 </p-dialog>

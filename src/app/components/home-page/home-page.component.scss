@@ -14,7 +14,6 @@
   padding: 1rem;
   background-color: #046138;
   color: white;
-  border-radius: 1rem;
   border: 1px solid white;
 }
 
@@ -39,4 +38,77 @@
   padding: 1rem;
   border-radius: 1rem;
   border: 2px solid black;
+}
+
+
+.course-card {
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid #046138;
+  border-radius: 5px;
+  max-height: 500px;
+}
+
+
+.card-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+
+.grid-item {
+  flex: 1 1 calc(25% - 10px); //uhhhhhh
+}
+
+
+.course-btn {
+  color: white;
+  background-color: #046138;
+  border-radius: 5rem;
+  flex: auto;
+  height: 50px;
+  padding: 15px
+}
+
+.btn-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+
+.align-right {
+  align-items: right;
+  float: right;
+}
+
+.align-left {
+  align-items: left;
+  float: left;
+}
+
+.card-header {
+  border-bottom: 4px solid #046138;
+  padding: 5px;
+  margin: 10px;
+}
+
+.code {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.basic-info {
+  padding: 15px;
+}
+
+.top-thing {
+  padding:10px;
+  font-weight: bold;
+}
+
+.instructor {
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
 }

@@ -17,6 +17,10 @@ export class HomePageComponent implements OnInit {
   courseEdit: Course = new Course();
   id: number;
 
+
+  showInfoModalFlag = false;
+  selectedCourse: Course = new Course();
+
   constructor(private courseService: CourseService) { }
 
   /**
@@ -31,6 +35,19 @@ export class HomePageComponent implements OnInit {
    */
   openAddCourse() {
     this.showAddCourseModal = true;
+  }
+
+  showInfo(course: Course) {
+    this.showInfoModal(course);
+  }
+
+  showInfoModal(course: Course) {
+    this.selectedCourse = course;
+    this.showInfoModalFlag = true;
+  }
+
+  closeInfoModal() {
+    this.showInfoModalFlag = false;
   }
 
   /**

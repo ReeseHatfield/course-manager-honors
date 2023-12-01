@@ -44,7 +44,12 @@ export class CourseService {
    */
   getCourse(id: number): Observable<Course> {
     // TODO: add code here
-    return of({} as Course);
+    const url: string = `${this.apiUrl}/${id}`;
+
+    const value: Observable<Course> = this.http.get<Course>(url, {headers: this.headers});
+    console.log(value);
+    return value;
+    //return of({} as Course);
   }
 
   /**
