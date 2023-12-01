@@ -66,8 +66,10 @@
   background-color: #046138;
   border-radius: 5rem;
   flex: auto;
-  height: 50px;
-  padding: 15px
+  height: 60px;
+  padding: 15px;
+  font-size: 25px;
+  justify-items: center;
 }
 
 .btn-container {
@@ -111,4 +113,13 @@
   padding: 15px;
   align-items: center;
   justify-content: center;
+}
+
+.info-item {
+  border: 8px solid #046138;
+  border-radius: 8px;
+  padding:10px;
+  font-weight: bold;
+  font-size: 30px;
+
 }

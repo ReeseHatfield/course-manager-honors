@@ -88,7 +88,7 @@ export class HomePageComponent implements OnInit {
    *  This function should be invoked when the user cancels editing a course.
    */
   closeEditModal() {
-    // TODO: add code here
+    this.showEditModal = false;
   }
 
   /**
@@ -109,7 +109,7 @@ export class HomePageComponent implements OnInit {
   }
 
   /**
-   *  This function should be invoked when the user confirms editing a course.
+   *  This function should be invo∆ed when the user confirms editing a course.
    *  Should call the update course service with the proper parameter
    *  Need to close the modal afterward
    */
